@@ -54,7 +54,7 @@ def display_image(filename):
 def conversion():
     #tess.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
 
-    tess.pytesseract.tesseract_cmd = r'C:\Users\bishn\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
+    tess.pytesseract.tesseract_cmd = r'/usr/bin/tesseract/tesseract.exe'
 
     #tess.pytesseract.tesseract_cmd = r'./.apt / usr / share / tesseract - ocr / 4.00 / tessdata/tesseract.exe'
     img = cv2.imread('static/uploads/image.png')
