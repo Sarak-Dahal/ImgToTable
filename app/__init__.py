@@ -9,5 +9,14 @@ UPLOAD_FOLDER = 'static/uploads/'
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+
+@app.route('/git_update', methods=['POST'])
+def git_update():
+    repo = git.Repo('./ImgToTable')
+    origin = repo.remotes.origin
+    repo.create_head('main', origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
+    origin.pull()
+    return '', 200
+
 from app import main
 
